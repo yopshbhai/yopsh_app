@@ -1,0 +1,81 @@
+<style>
+    body{ font-family: Arial , sans-serif; background-color: #121212; color: #FFF; margin: 0; }
+    .body{
+        padding: 20px;
+    }
+    button{ cursor: pointer; }
+    .divider{ flex-grow: 1; border: none; height: 1px; background: #00ff7f; margin-left: 10px; }
+    .header{ display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background-color: #1f1f1f; margin-bottom: 10px; }
+    .app-icon{background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); width: 35px; border-radius: 125px; }
+    .loader { position: fixed; top: 0; left: 0; width: 100%; height: 68%; background: rgba(0, 0, 0, 0); display: flex; justify-content: center; align-items: center; z-index: 1000; } 
+    .hidden { display: none; }
+    .container{ max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px; overflow: hidden; }
+    .main-news{ background-color: #1f1f1f; border-radius: 10px; overflow: hidden; padding: 20px; }
+    .main-image{ width: 100%; border-radius: 10px; height: 300px; }
+    .content{ margin-top: 5px; color: #bdbdbd; }
+    .user-content{ margin-bottom: 20px; }
+    .username{ font-weight: bold; color: #66bb6a; }
+    .icon-btn{ display: flex; }
+    .award-popup{ display: none; }
+    .show{ display: block; }
+    .news-section{ display: flex; flex-wrap: wrap; gap: 20px; }
+    .suggested-news img{ width: 100px; height: 100px; object-fit: cover; border-radius: 10px; }
+    .suggested-news{ background-color: #1f1f1f; display: flex; gap: 10px; border-radius: 10px; overflow: hidden; flex: 1 1 100%; padding: 10px; }
+    .like{ border: 1px solid #00ff7f; }
+    .dislike{ border: 1px solid #ff0000; }
+    .award{ border: 1px solid #7d7c7c; }
+    .like,.dislike,.award{ height: 50px; width: 50px; background: transparent; padding: 6px; margin: 5px; border-radius: 125px; color: #fff; }
+    .award-emoji-btn{ height: 50px; width: 50px; background: transparent; padding: 3px; margin: 5px; border-radius: 125px; color: #fff; border: 1px solid #ffff00; }
+</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="loader.css">
+<div class="header">
+    <img src="https://i.ibb.co/vckRpWn/icon.png" class="app-icon" onclick="reload()">
+    <hr class="divider">
+</div>
+<div id="loader" class="loader hidden">
+    <div class="loader-daku"></div>
+</div>
+<div class="body">
+    <div class="container">
+        <div class="bg">
+            <div id="main-news-section" class="main-news"></div>
+            <div class="reactions">
+                <h3 class="text">Reactions</h3>
+                <div class="reactions-top">
+                    <div class="icon-btn">
+                        <button id="like-btn" class="like">
+                        👍 <span id="like-count">0</span>
+                    </button>
+                    <button id="dislike-btn" class="dislike">
+                        👎 <span id="dislike-count">0</span>
+                    </button>
+                    <div class="relative">
+                        <button id="award-btn" class="award">
+                            🏆 
+                        </button>
+                        <div id="award-popup" class="award-popup">
+                            <div class="grid grid-cols-3 gap-4">
+                                <button class="award-emoji-btn p-2 hover:bg-gray-100 rounded" data-emoji="laugh">
+                                    😂 <span class="award-count" data-type="laugh">0</span>
+                                </button>
+                                <button class="award-emoji-btn p-2 hover:bg-gray-100 rounded" data-emoji="funny">
+                                    🤣 <span class="award-count" data-type="funny">0</span>
+                                </button>
+                                <button class="award-emoji-btn p-2 hover:bg-gray-100 rounded" data-emoji="angry">
+                                    😠 <span class="award-count" data-type="angry">0</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-6">
+                <h3 class="title-news">Suggested News</h3>
+                <div id="suggested-news" class="news-section"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="meme_details.js"></script>

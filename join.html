@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    *{ overflow-x: hidden; }
+	body{ font-family: Arial , sans-serif; margin: 0; background-color: #121212; color: #fff; }
+    .divider{ flex-grow: 1; border: none; height: 1px; background: #00ff7f; margin-left: 10px; }
+    .header{ display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background-color: #1f1f1f; margin-bottom: 10px; }
+    .app-icon{background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); width: 35px; border-radius: 125px;}
+	.hidden, .review-modal, .overlay { display: none; }
+	.form-group{ background-color: #1f1f1f; padding: 30px; width: 74%; border-radius: 10px; padding-top: 10px; }
+	.form-body{ display: flex; align-items: center; justify-content: center; flex-direction: column; height: 80vh; }
+	h2{ font-size: 20px; margin-bottom: 20px; color: #ff6200; }
+	input{ width: 100%; padding: 10px; margin-top: 5px; background: #333; border: 1px solid#444; border-radius: 5px; color: #fff; margin-bottom: 10px; outline: none; }
+    button{ width: 100%; padding: 8px; background: #ff6200; color: #fff; border: none; border-radius: 5px; font-size: 16px; margin-top: 10px; cursor: pointer; }
+    #communityInfo{ margin-top: -80vh; padding: 20px; background: #1f1f1f; margin-left: 10px; margin-right: 10px; border-radius: 8px;  padding-top: 0px; padding-bottom: 0px; }
+    .com-use{ display: flex; justify-content: space-between; }
+    #communityInfo p{ font-size: 20px; }
+	.rev-btn{ margin-left: 10px; margin-right: 10px; }
+    .rev-btn button{ background: linear-gradient(145deg, #6b00ff, #3700b3); }
+    #reviewsList{ font-size: 18px; background-color: #1f1f1f; margin: 15px; border-radius: 8px; padding-left: 15px; }
+    .review-modal{ padding: 30px; margin: 10px; background-color: #1f1f1f; border-radius: 10px; }
+    #reviewText { width: 280px; height: 150px; background: #00000000; padding: 10px; color: #fff; outline: #ffdead; resize: none; }
+    .reviews-list p { max-width: 300px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; cursor: pointer; margin-top: -10px; }
+    .reviews-list p.expanded { white-space: normal; overflow: visible; text-overflow: clip; }
+    body.modal-open { background-color: rgba(0, 0, 0, 0.8); overflow: hidden; position: relative; }
+    body.modal-open > *:not(.header):not(#reviewModal) { opacity: 0.1; pointer-events: none; }
+</style>
+<div class="header">
+    <img src="https://i.ibb.co/vckRpWn/icon.png" class="app-icon">
+    <hr class="divider">
+</div>
+<div class="form-body">
+<div class="form-group">
+	<h2>Enter Secret Code</h2>
+    <label for="secretCode">Secret Code:</label><br>
+    <input type="text" id="secretCode" placeholder="Enter your secret code"><br>
+    <button id="joinButton">Join</button>
+</div>
+</div>
+<div class="community-info hidden" id="communityInfo">
+    <div class="com-use">
+    <p><strong>Title:</strong> <span id="communityTitle"></span></p>
+    <p><strong>Genre:</strong> <span id="communityGenre"></span></p>
+</div>
+</div>
+<div class="rev-btn">
+<button id="reviewButton" class="hidden">✏️ Write a Review</button>
+</div>
+<div class="overlay"></div>
+<div class="review-modal" id="reviewModal">
+    <h3>Share Your Idea</h3>
+    <textarea id="reviewText" placeholder="Write your review here"></textarea>
+    <button id="submitReview">Submit Review</button>
+    <button id="closeModal">Close</button>
+</div>
+
+<div class="reviews" id="reviewsSection">
+    <div id="reviewsList" class="reviews-list"></div>
+</div>
+<script src="join.js"></script>

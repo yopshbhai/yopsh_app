@@ -1,0 +1,159 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="loader.css">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background-color: #121212;
+        color: #fff;
+    }
+    .divider {
+        flex-grow: 1;
+        border: none;
+        height: 1px;
+        background: #00ff7f;
+        margin-left: 10px;
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: #1f1f1f;
+        margin-bottom: 10px;
+    }
+    .app-icon {
+        background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        width: 35px;
+        border-radius: 125px;
+    }
+    #gamerDiv, #developerDiv {
+        display: none;
+    }
+    #gamerExperience, #developerExperience {
+        resize: none;
+        outline: none;
+        padding: 12px;
+        margin-bottom: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        width: 75%;
+        margin-top: -10px;
+        height: 114px;
+        margin-left: 10%;
+    }
+    #buttons {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    #gamerButton, #developerButton {
+        background: transparent;
+        border: none;
+        padding: 6px;
+        width: 20%;
+        color: #FFF;
+    }
+    #gamerButton {
+        border-bottom: 1px solid #e94560;
+    }
+    .message {
+        text-align: center;
+        font-size: 19px;
+        font-weight: 500;
+    }
+    .gamer-lebel {
+        color: #FFF;
+        font-size: 22px;
+        margin-left: 10%;
+        margin-top: 10px;
+    }
+    .loader {
+        display: none;
+        text-align: center;
+    }
+    #gamerForm {
+        margin-top: 5%;
+    }
+    .submit-btn-news {
+        margin-left: 10%;
+        margin-top: -10px;
+        padding: 8px;
+        background: #ff6200;
+        width: 75%;
+    }
+    #developerImage {
+        padding: 12px;
+        margin-bottom: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        width: 75%;
+        margin-top: 10px;
+        height: 60px;
+        margin-left: 10%;
+    }
+    #developerForm {
+        margin-top: 20px;
+    }
+    input[type="file"]::file-selector-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        margin-right: 14px;
+        border-radius: 4px;
+        padding: 8px;
+        cursor: pointer;
+    }
+    #developerExperience {
+        height: 5%;
+    }
+    #gamerButton {
+        width: 15%;
+    }
+    .loader-daku{
+    	margin-top: 25%;
+    }
+    #developerLoader , #gamerLoader{
+    	display: none;
+    }
+</style>
+<div class="header">
+    <img src="https://i.ibb.co/vckRpWn/icon.png" class="app-icon">
+    <hr class="divider">
+</div>
+<hr class="head-hr">
+<div id="buttons">
+    <button id="gamerButton">Gamer</button>&nbsp;&nbsp;
+    <button id="developerButton">Developer</button>
+</div>
+<div id="gamerDiv">
+    <form id="gamerForm">
+        <label for="gamerExperience" class="gamer-lebel">Your Experience:</label><br><br>
+        <textarea id="gamerExperience" name="experience" rows="4" cols="50" required></textarea><br><br>
+        <button type="submit" class="submit-btn-news">Submit</button>
+    </form>
+    <div class="loader-papa">
+        <div id="gamerLoader" class="loader-daku"></div>
+    </div>
+    <div id="gamerMessage" class="message"></div>
+</div>
+<div id="developerDiv">
+    <form id="developerForm">
+        <label for="developerExperience" class="gamer-lebel">Game Title:</label><br><br>
+        <input id="developerExperience"><br>
+        <label for="developerImage" class="gamer-lebel">App Icon:</label><br>
+        <input type="file" id="developerImage" name="image" accept="image/*" required><br><br>
+        <button type="submit" class="submit-btn-news">Submit</button>
+    </form>
+    <div class="loader-papa">
+        <div id="developerLoader" class="loader-daku"></div>
+    </div>
+    <div id="developerMessage" class="message"></div>
+</div>
+<script src="gamer_upload.js"></script>

@@ -1,0 +1,70 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/8aa17a250d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="loader.css">
+<div class="header">
+    <img src="https://i.ibb.co/vckRpWn/icon.png" class="app-icon">
+    <hr class="divider">
+</div>
+<div id="content">
+  <div class="login-item">
+    <div id="loginForm">
+      <h2>Sign In To YOPSH!</h2>
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button onclick="login()">Sign In</button>
+      <h3 class="text-h3">Don't Have Account <a href="signup.html" class="click-here">Click Here</a></h3>
+    </div>
+  </div>
+    <div id="userDetails">
+      <div class="head-userarea">
+      <img id="userImage" src="" alt="User Image">
+      <div style="font-size: 22px; padding: 10px;">
+      <h4>Hey Dear,</h4>
+      <span id="userName" class="user-name"></span>
+    </div>
+      <span id="userBoss"></span>
+    </div>
+      <hr style="margin: 10px;">
+      <button id="toggleButton"><p>About<span class="material-symbols-outlined">face</span></p>
+        <i class="arrow arrow-right"></i>
+      </button>
+      <div class="user-info" id="myDiv">
+        <p><strong>Email:</strong> <span id="userEmail"></span></p>
+        <p><strong>Age:</strong> <span id="userAge"></span></p>
+        <p><strong>Mobile Number:</strong> <span id="userMobile"></span></p>
+        <p><strong>Gender:</strong> <span id="userGender"></span></p>
+      </div>
+      <hr style="margin: 10px; margin-bottom: 0px;"> 
+      <div class="nav-footer-btn">
+      <button onclick="window.location.href='show_news.html';"><p style="font-size: 19px;"><span class="material-symbols-outlined" style="background: green;">newspaper</span> News</p> <i class="arrow arrow-right"></i></button> 
+      <hr style="margin: 10px; margin-bottom: 0px;"> 
+      <button onclick="window.location.href='show_news.html';"><p style="font-size: 19px;"><span class="material-symbols-outlined" style="background: blue;">sentiment_satisfied</span> Meme</p> <i class="arrow arrow-right"></i> </button>
+    </div>
+    <hr style="margin: 10px; margin-bottom: 0px;"> 
+    <button id="logoutButton" onclick="logout()"><p style="font-size: 19px;"><span class="material-symbols-outlined" style="background: red;">logout</span> Logout</p></button>
+    </div>
+  </div>
+  <div class="loader-papa">
+    <div id="loader" class="loader-daku">
+  </div>
+  <div id="customAlert">
+    <h2>Yopsh Says That!</h2>
+    <p id="alertMessage"></p>
+    <button onclick="closeCustomAlert()">OK</button>
+  </div>
+  <script src="profile.js"></script>
+  <style>
+    body{ font-family: Arial , sans-serif; margin: 0; background-color: #121212; color: #fff; }
+    .divider{ flex-grow: 1; border: none; height: 1px; background: #00ff7f; margin-left: 10px; }
+    .header{ display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background-color: #1f1f1f; margin-bottom: 10px; }
+    .app-icon{background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); width: 35px; border-radius: 125px;}
+    #loader { top: 10%; }
+    #userImage { width: 90px; height: 90px; margin: 10px 0px 0px 10px; border-radius: 125px; }
+    h4{ margin: 0px 0px 10px 0px; }
+    .click-here { font-size: 22px; color: #fff; text-decoration: none; color: #fff; }
+    .text-h3{ display: flex; align-items: center; justify-content: space-between; color: #fff; }
+    .login-item { display: flex; justify-content: center; height: 80vh; align-items: center; float: inline-start; }
+ </style>

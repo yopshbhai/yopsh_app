@@ -1,0 +1,85 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://kit.fontawesome.com/8aa17a250d.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<div class="header">
+    <img src="https://i.ibb.co/vckRpWn/icon.png" class="app-icon">
+    <hr class="divider">
+</div>
+<div class="loader-papa">
+<div id="loader" class="loader-daku">
+<!--Loader-->
+</div>
+</div>
+<div id="questionsContainer"></div>
+<div id="alertMessage"></div>
+<script src="review.js"></script>
+<style>
+    body{ font-family: Arial , sans-serif; margin: 0; background-color: #121212; color: #fff; }
+    .divider{ flex-grow: 1; border: none; height: 1px; background: #00ff7f; margin-left: 10px; }
+    .header{ display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background-color: #1f1f1f; margin-bottom: 10px; }
+    .app-icon{background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); width: 35px; border-radius: 125px;}
+    .username-text,.time-stamp,.question{
+        font-size: 20px;
+    }
+    .username-text,.question{
+        margin-top: -18px;
+    }
+    .comments{
+        margin-left: 20px;
+        font-size: 20px;
+    }
+    .comments-hero{
+        margin-top: -26px;
+        margin-left: 20px;
+        font-size: 17px;
+        height: auto;
+        margin-bottom: 15px;
+        max-height: 150px;
+        overflow-y: scroll;
+    }
+    .publish-btn, .close-btn{
+        margin-left: 10px;
+        border: none;
+        margin-bottom: 12px;
+        margin-top: -3px;
+        background: transparent;
+    }
+    .close-btn{
+        margin-left: 68%;
+    }
+    .head-r{
+        margin-top: 20px;
+        width: 93%;
+        margin-left: -9px;
+    }
+    .commentBox{
+        display: none;
+        border-radius: 20px;
+        margin-top: 13px;
+        width: 93%;
+        background: #000;
+        border-radius: 10px;
+    }
+    #alertMessage {
+        width: 80%;
+        padding: 10px;
+        margin-top: 10px;
+        border-radius: 4px;
+        margin-left: 5%;
+    }
+    #alertMessage.success {
+        background-color: #dff0d8;
+        color: #3c763d;
+        border-color: #d6e9c6;
+    }
+    #alertMessage.error {
+        background-color: #f2dede;
+        color: #a94442;
+        border-color: #ebccd1;
+    }
+    #questionsContainer{
+        margin-left: 20px;
+        color: #fff;
+    }
+</style>

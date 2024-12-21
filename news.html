@@ -1,0 +1,31 @@
+<style>
+    body{ font-family: Arial , sans-serif; margin: 0; background-color: #121212; color: #fff; }
+    .divider{ flex-grow: 1; border: none; height: 1px; background: #00ff7f; margin-left: 10px; }
+    .header{ display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; background-color: #1f1f1f; margin-bottom: 10px; }
+    .app-icon{background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); width: 35px; border-radius: 125px;}
+    .news-card{ display: flex; background: #1f1f1f; border-radius: 10px; overflow: hidden; margin-bottom: -10px; height: 20%; }
+    .news-image{ width: 120px; object-fit: cover; cursor: pointer; }
+    .news-details{ padding-left: 10px; flex-grow: 1; display: flex; flex-direction: column; height: 150px; }
+    .news-title{ font-size: 18px; color: #00ff7f; width: 160px; }
+    .news-username{ font-size: 14px; color: #aaa; width: 100px; margin-top: -5px;}
+    .news-des{ font-size: 14px; color: #ddd; width: 180px; margin-top: -5px; }
+    .news-section{ padding: 20px; }
+    .news-title,.news-username,.news-des{ overflow-x: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    @media only screen and (max-width: 600px){
+        .news-card{ height: 13%; }
+    }
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="loader.css">
+<div class="header">
+    <img src="https://i.ibb.co/vckRpWn/icon.png" class="app-icon">
+    <hr class="divider">
+</div>
+<div id="news-container"><!-- News will be dynamically populated here --></div>
+<div class="loader-papa">
+<div id="loader" class="loader-daku">
+<!--Loader-->
+</div>
+</div>
+<script src="news.js"></script>
